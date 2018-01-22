@@ -15,11 +15,11 @@ open class Operation<ResultType, ErrorType: Error>: Foundation.Operation {
     open var callbackQueue = DispatchQueue.main
     
     public func finish(withError error: ErrorType) {
-        fatalError("Operation is an abstract class, you must provide an implementation in your subclass!")
+        fatalError("Operation is an abstract class! You must provide an implementation of finish(withError:) in your subclass.")
     }
     
     public func finish(withResult result: ResultType) {
-        fatalError("Operation is an abstract class, you must provide an implementation in your subclass!")
+        fatalError("Operation is an abstract class! You must provide an implementation of finish(withResult:) in your subclass.")
     }
     
 }
