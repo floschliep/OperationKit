@@ -7,34 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1347528F20127E8E00DC17B6 /* OperationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1347528520127E8E00DC17B6 /* OperationKit.framework */; };
-		1347529420127E8E00DC17B6 /* OperationKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1347529320127E8E00DC17B6 /* OperationKitTests.swift */; };
 		1347529620127E8E00DC17B6 /* OperationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1347528820127E8E00DC17B6 /* OperationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		134752A0201286BE00DC17B6 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1347529F201286BE00DC17B6 /* Operation.swift */; };
 		134752A22012879E00DC17B6 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134752A12012879E00DC17B6 /* AsyncOperation.swift */; };
 		134752A52012887700DC17B6 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134752A42012887700DC17B6 /* SyncOperation.swift */; };
+		134752BD2015ED4300DC17B6 /* SyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134752BB2015ED4300DC17B6 /* SyncOperationTests.swift */; };
+		134752BE2015ED4300DC17B6 /* AyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134752BC2015ED4300DC17B6 /* AyncOperationTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1347529020127E8E00DC17B6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1347527C20127E8E00DC17B6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1347528420127E8E00DC17B6;
-			remoteInfo = OperationKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1347528520127E8E00DC17B6 /* OperationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1347528820127E8E00DC17B6 /* OperationKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationKit.h; sourceTree = "<group>"; };
 		1347528920127E8E00DC17B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1347528E20127E8E00DC17B6 /* OperationKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OperationKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1347529320127E8E00DC17B6 /* OperationKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationKitTests.swift; sourceTree = "<group>"; };
-		1347529520127E8E00DC17B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1347529F201286BE00DC17B6 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		134752A12012879E00DC17B6 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		134752A42012887700DC17B6 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
+		134752B32015ED2200DC17B6 /* OperationKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OperationKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		134752B72015ED2200DC17B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		134752BB2015ED4300DC17B6 /* SyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncOperationTests.swift; sourceTree = "<group>"; };
+		134752BC2015ED4300DC17B6 /* AyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AyncOperationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,11 +36,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1347528B20127E8E00DC17B6 /* Frameworks */ = {
+		134752B02015ED2200DC17B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1347528F20127E8E00DC17B6 /* OperationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				1347528720127E8E00DC17B6 /* OperationKit */,
-				1347529220127E8E00DC17B6 /* OperationKitTests */,
+				134752B42015ED2200DC17B6 /* OperationKitTests */,
 				1347528620127E8E00DC17B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				1347528520127E8E00DC17B6 /* OperationKit.framework */,
-				1347528E20127E8E00DC17B6 /* OperationKitTests.xctest */,
+				134752B32015ED2200DC17B6 /* OperationKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,15 +74,6 @@
 			path = OperationKit;
 			sourceTree = "<group>";
 		};
-		1347529220127E8E00DC17B6 /* OperationKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				1347529320127E8E00DC17B6 /* OperationKitTests.swift */,
-				1347529520127E8E00DC17B6 /* Info.plist */,
-			);
-			path = OperationKitTests;
-			sourceTree = "<group>";
-		};
 		134752A32012886300DC17B6 /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +82,16 @@
 				134752A42012887700DC17B6 /* SyncOperation.swift */,
 			);
 			path = "Base Classes";
+			sourceTree = "<group>";
+		};
+		134752B42015ED2200DC17B6 /* OperationKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				134752BC2015ED4300DC17B6 /* AyncOperationTests.swift */,
+				134752BB2015ED4300DC17B6 /* SyncOperationTests.swift */,
+				134752B72015ED2200DC17B6 /* Info.plist */,
+			);
+			path = OperationKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,22 +126,21 @@
 			productReference = 1347528520127E8E00DC17B6 /* OperationKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1347528D20127E8E00DC17B6 /* OperationKitTests */ = {
+		134752B22015ED2200DC17B6 /* OperationKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1347529C20127E8E00DC17B6 /* Build configuration list for PBXNativeTarget "OperationKitTests" */;
+			buildConfigurationList = 134752B82015ED2200DC17B6 /* Build configuration list for PBXNativeTarget "OperationKitTests" */;
 			buildPhases = (
-				1347528A20127E8E00DC17B6 /* Sources */,
-				1347528B20127E8E00DC17B6 /* Frameworks */,
-				1347528C20127E8E00DC17B6 /* Resources */,
+				134752AF2015ED2200DC17B6 /* Sources */,
+				134752B02015ED2200DC17B6 /* Frameworks */,
+				134752B12015ED2200DC17B6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1347529120127E8E00DC17B6 /* PBXTargetDependency */,
 			);
 			name = OperationKitTests;
 			productName = OperationKitTests;
-			productReference = 1347528E20127E8E00DC17B6 /* OperationKitTests.xctest */;
+			productReference = 134752B32015ED2200DC17B6 /* OperationKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +158,7 @@
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
-					1347528D20127E8E00DC17B6 = {
+					134752B22015ED2200DC17B6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -187,7 +177,7 @@
 			projectRoot = "";
 			targets = (
 				1347528420127E8E00DC17B6 /* OperationKit */,
-				1347528D20127E8E00DC17B6 /* OperationKitTests */,
+				134752B22015ED2200DC17B6 /* OperationKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,7 +190,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1347528C20127E8E00DC17B6 /* Resources */ = {
+		134752B12015ED2200DC17B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,23 +210,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1347528A20127E8E00DC17B6 /* Sources */ = {
+		134752AF2015ED2200DC17B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1347529420127E8E00DC17B6 /* OperationKitTests.swift in Sources */,
+				134752BE2015ED4300DC17B6 /* AyncOperationTests.swift in Sources */,
+				134752BD2015ED4300DC17B6 /* SyncOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1347529120127E8E00DC17B6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1347528420127E8E00DC17B6 /* OperationKit */;
-			targetProxy = 1347529020127E8E00DC17B6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1347529720127E8E00DC17B6 /* Debug */ = {
@@ -419,33 +402,37 @@
 			};
 			name = Release;
 		};
-		1347529D20127E8E00DC17B6 /* Debug */ = {
+		134752B92015ED2200DC17B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = BKFPF95XME;
 				INFOPLIST_FILE = OperationKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.floschliep.OperationKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1347529E20127E8E00DC17B6 /* Release */ = {
+		134752BA2015ED2200DC17B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = BKFPF95XME;
 				INFOPLIST_FILE = OperationKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.floschliep.OperationKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -470,11 +457,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1347529C20127E8E00DC17B6 /* Build configuration list for PBXNativeTarget "OperationKitTests" */ = {
+		134752B82015ED2200DC17B6 /* Build configuration list for PBXNativeTarget "OperationKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1347529D20127E8E00DC17B6 /* Debug */,
-				1347529E20127E8E00DC17B6 /* Release */,
+				134752B92015ED2200DC17B6 /* Debug */,
+				134752BA2015ED2200DC17B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

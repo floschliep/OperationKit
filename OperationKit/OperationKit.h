@@ -6,7 +6,7 @@
 //  Copyright © 2018 Florian Schliep. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for OperationKit.
 FOUNDATION_EXPORT double OperationKitVersionNumber;

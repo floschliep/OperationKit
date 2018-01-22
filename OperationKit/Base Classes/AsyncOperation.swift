@@ -52,16 +52,23 @@ open class AsyncOperation<ResultType, ErrorType: Error>: Operation<ResultType, E
     }
     
     final public override func start() {
-        guard !self.isCancelled else { return }
+        if Thread.current.isMainThread {
+            guard !self.isCancelled else { return }
+        } else {
+            let cancelled = DispatchQueue.main.sync {
+                return self.isCancelled
+            }
+            guard !cancelled else { return }
+        }
         
         self.flo_executing = true
-        self.startOperation()
+        self.execute()
     }
     
     // MARK: - Execution
     
-    func startOperation() {
-        fatalError("AsyncOperation is an abstract class! You must provide an implementation of startOperation in your subclass.")
+    func execute() {
+        fatalError("AsyncOperation is an abstract class! You must provide an implementation of execute in your subclass.")
     }
     
     final public override func finish(withError error: ErrorType) {
