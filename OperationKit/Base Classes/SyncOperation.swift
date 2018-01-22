@@ -22,10 +22,6 @@ open class SyncOperation<ResultType, ErrorType: Error>: Operation<ResultType, Er
     
     // MARK: - Execution
     
-    open override func main() {
-        fatalError("SyncOperation is an abstract class! You must provide an implementation of main in your subclass.")
-    }
-    
     final public override func finish(withError error: ErrorType) {
         guard !self.isCancelled else { return }
         

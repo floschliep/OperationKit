@@ -62,14 +62,10 @@ open class AsyncOperation<ResultType, ErrorType: Error>: Operation<ResultType, E
         }
         
         self.flo_executing = true
-        self.execute()
+        self.main()
     }
     
     // MARK: - Execution
-    
-    func execute() {
-        fatalError("AsyncOperation is an abstract class! You must provide an implementation of execute in your subclass.")
-    }
     
     final public override func finish(withError error: ErrorType) {
         guard !self.isCancelled else { return }

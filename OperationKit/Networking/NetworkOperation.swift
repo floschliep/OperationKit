@@ -53,7 +53,7 @@ open class NetworkOperation<ResultType, TaskResultType>: AsyncOperation<ResultTy
     
     // MARK: - Execution
     
-    open override func execute() {
+    public final override func main() {
         // prepare request
         var request = URLRequest(url: self.url)
         do {

@@ -17,7 +17,7 @@ private class MockOperation: AsyncOperation<Bool, NSError> {
         self.result = result
     }
     
-    override func execute() {
+    override func main() {
         self.onExecute?()
         
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 0.15) { [weak self] in

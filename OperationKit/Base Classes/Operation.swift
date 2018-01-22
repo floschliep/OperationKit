@@ -14,6 +14,10 @@ open class Operation<ResultType, ErrorType: Error>: Foundation.Operation {
     open var successHandler: ((ResultType) -> Void)?
     open var callbackQueue = DispatchQueue.main
     
+    open override func main() {
+        fatalError("Operation is an abstract class! You must provide an implementation of main() in your subclass.")
+    }
+    
     public func finish(withError error: ErrorType) {
         fatalError("Operation is an abstract class! You must provide an implementation of finish(withError:) in your subclass.")
     }
