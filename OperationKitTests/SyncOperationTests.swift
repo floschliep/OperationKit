@@ -150,18 +150,23 @@ class SyncOperationTests: XCTestCase {
         var mainQueueCalled = false
         DispatchQueue.main.safeSync {
             mainQueueCalled = true
+            XCTAssertTrue(DispatchQueue.main.isCurrentQueue)
         }
         XCTAssertTrue(mainQueueCalled)
         
         var queue1Called = false
         var queue2Called = false
-        queue1.sync {
+        queue1.safeSync {
+            XCTAssertTrue(queue1.isCurrentQueue)
             queue1.safeSync {
                 queue1Called = true
+                XCTAssertTrue(queue1.isCurrentQueue)
             }
-            queue2.sync {
+            queue2.safeSync {
+                XCTAssertTrue(queue2.isCurrentQueue)
                 queue2.safeSync {
                     queue2Called = true
+                    XCTAssertTrue(queue2.isCurrentQueue)
                 }
             }
         }
