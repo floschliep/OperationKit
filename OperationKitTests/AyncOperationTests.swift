@@ -31,7 +31,7 @@ private class MockOperation: AsyncOperation<Bool, NSError> {
 }
 
 class AyncOperationTests: XCTestCase {
-
+    
     let operationQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.underlyingQueue = DispatchQueue.global(qos: .background)
@@ -85,8 +85,7 @@ class AyncOperationTests: XCTestCase {
             XCTFail()
         }
         operation.failureHandler = { _ in
-            // compare the current queue to the expected queue
-            XCTAssertEqual(__dispatch_queue_get_label(nil), __dispatch_queue_get_label(queue))
+            XCTAssertTrue(queue.isCurrentQueue)
             successExpectation.fulfill()
         }
         operation.onExecute = { [unowned operation] in

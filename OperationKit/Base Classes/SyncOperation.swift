@@ -25,17 +25,31 @@ open class SyncOperation<ResultType, ErrorType: Error>: Operation<ResultType, Er
     final public override func finish(withError error: ErrorType) {
         guard !self.isCancelled else { return }
         
-        self.callbackQueue.async() { [weak self] in
-            self?.failureHandler?(error)
+        self.callbackQueue.safeSync {
+            self.failureHandler?(error)
         }
     }
     
     final public override func finish(withResult result: ResultType) {
         guard !self.isCancelled else { return }
         
-        self.callbackQueue.async() { [weak self] in
-            self?.successHandler?(result)
+        self.callbackQueue.safeSync {
+            self.successHandler?(result)
         }
     }
     
+}
+
+extension DispatchQueue {
+    var isCurrentQueue: Bool {
+        return (__dispatch_queue_get_label(nil) == __dispatch_queue_get_label(self))
+    }
+    
+    func safeSync(execute block: () -> Void) {
+        if self.isCurrentQueue {
+            block()
+        } else {
+            self.sync(execute: block)
+        }
+    }
 }

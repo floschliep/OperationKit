@@ -50,8 +50,7 @@ class SyncOperationTests: XCTestCase {
         operation.callbackQueue = queue
         operation.successHandler = { operationResult in
             XCTAssertEqual(operationResult, result)
-            // compare the current queue to the expected queue
-            XCTAssertEqual(__dispatch_queue_get_label(nil), __dispatch_queue_get_label(queue))
+            XCTAssertTrue(queue.isCurrentQueue)
             expectation.fulfill()
         }
         operation.failureHandler = { _ in
@@ -114,6 +113,60 @@ class SyncOperationTests: XCTestCase {
         operation.cancel()
         
         self.waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testCurrentQueueDetection() {
+        XCTAssertTrue(DispatchQueue.main.isCurrentQueue)
+        
+        let queue1 = DispatchQueue(label: "queue1")
+        let queue2 = DispatchQueue(label: "queue2")
+        
+        queue1.sync {
+            XCTAssertTrue(queue1.isCurrentQueue)
+            XCTAssertFalse(queue2.isCurrentQueue)
+            XCTAssertFalse(DispatchQueue.main.isCurrentQueue)
+        }
+        
+        queue2.sync {
+            XCTAssertTrue(queue2.isCurrentQueue)
+            XCTAssertFalse(queue1.isCurrentQueue)
+            XCTAssertFalse(DispatchQueue.main.isCurrentQueue)
+        }
+        
+        queue1.sync {
+            queue2.sync {
+                XCTAssertTrue(queue2.isCurrentQueue)
+                XCTAssertFalse(queue1.isCurrentQueue)
+            }
+            XCTAssertTrue(queue1.isCurrentQueue)
+            XCTAssertFalse(queue2.isCurrentQueue)
+        }
+    }
+    
+    func testSafeSync() {
+        let queue1 = DispatchQueue(label: "queue1")
+        let queue2 = DispatchQueue(label: "queue2")
+        
+        var mainQueueCalled = false
+        DispatchQueue.main.safeSync {
+            mainQueueCalled = true
+        }
+        XCTAssertTrue(mainQueueCalled)
+        
+        var queue1Called = false
+        var queue2Called = false
+        queue1.sync {
+            queue1.safeSync {
+                queue1Called = true
+            }
+            queue2.sync {
+                queue2.safeSync {
+                    queue2Called = true
+                }
+            }
+        }
+        XCTAssertTrue(queue1Called)
+        XCTAssertTrue(queue2Called)
     }
     
 }
